@@ -30,16 +30,19 @@ filterOptions.forEach(option => {
         filterName.innerText = option.innerText;
 
         if(option.id === "brightness"){ // persist the state of the filters in the slider range
+            filterSlider.max = "200";
             filterSlider.value =   brightness
             filterValue.innerText = `${brightness}%`
         } else if(option.id === "saturation") {
+            filterSlider.max = "200";
             filterSlider.value =   saturation
             filterValue.innerText = `${saturation}%`
         } else if(option.id === "inversion"){
+            filterSlider.max = "100";
             filterSlider.value =  inversion
             filterValue.innerText = `${inversion}%`
         } else {
-            filterSlider.value =  grayscale
+            filterSlider.max = "100"
             filterValue.innerText = `${grayscale}%`
         }
     });
