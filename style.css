@@ -38,7 +38,7 @@ body{
 .wrapper .editor-panel{
     width: 280px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #5372F0;
     padding: 15px 20px;
 
 }
@@ -47,17 +47,18 @@ body{
     font-size: 16px;
     margin-bottom: 12px;
 }
-.editor-panel .options{
+.editor-panel .options, .controls{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 .editor-panel button{
     height: 40px;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: bold;
     color: #6C757D;
     margin-bottom: 8px;
-    border-radius: 5px;
+    border-radius: 3px;
     background: #fff;
     border: 1px solid #aaa;
 }
@@ -72,6 +73,95 @@ body{
     background: #5372F0;
     border-color: #5372F0;
 }
+.editor-panel .slider{
+    margin-top: 12px;
+}
+.filter .slider .filter-info{
+    display: flex;
+    color: #464646;
+    justify-content: space-between;
+}
+.filter .slider input{
+    width: 100%;
+    height: 5px;
+    accent-color: #5372F0 ;
+}
 .editor-panel .rotate button{
     width: calc(100% / 4 - 3px);
 }
+.editor-panel .rotate{
+    margin-top: 17px;
+}
+.rotate button:nth-child(3),
+.rotate button:nth-child(4){
+    font-size: 18px;
+}
+.wrapper .preview-img{
+    margin-left: 20px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preview-img img{
+    max-width: 490px;
+    max-height: 335px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+}
+.controls button{
+    padding: 11px 20px;
+    font-size: 14px;
+    border-radius: 3px;
+    background: #fff;
+    color: #fff ;
+   
+}
+.controls .reset-filters{
+    background-color: transparent;
+    border: 1px solid #ff0251;
+    color: #000;
+    transition: .3s; 
+    
+}
+
+  .controls .reset-filters:hover {
+    animation: pulse 1s infinite;
+    transition: .3s;
+    background: #ff0000;
+    color: #fff;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(.9);
+    }
+      100% {
+      transform: scale(1);
+    }
+  }
+
+  .controls .choose-img{
+    background: #6C757D;
+    border: 1px solid #6C757D;
+    margin-right: 10px;
+  }
+  .controls .choose-img:hover{
+    background: #464646;
+  }
+
+  .controls .save-img {
+    background: #5372F0;
+    border: 1px solid #5372F0;
+  }
+  .controls .save-img:hover{
+    background: #213aa0;
+  }  
+
+  /*REPONSIVE*/
+
+  
