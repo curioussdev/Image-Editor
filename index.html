@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/style.css">
     <title>Editor de Imagens</title>
     
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel='stylesheet'>
@@ -34,24 +34,28 @@
                 <div class="rotate">
                     <label class="title">Girar e Virar</label>
                     <div class="options">
-                        <button><img src="assets/icons/arrow-rotate-left.svg" alt="arrowrotate left"></button>
-                        <button><img src="assets/icons/arrow-rotate-right.svg" alt="arrow rotate righ"></button>
+                        <button><img src="src/assets/icons/arrow-rotate-left.svg" alt="arrowrotate left"></button>
+                        <button><img src="src/assets/icons/arrow-rotate-right.svg" alt="arrow rotate righ"></button>
                         <button><i class="bx bx-reflect-vertical"></i></button>
                         <button><i class="bx bx-reflect-horizontal"></i></button>
                     </div>
                 </div>
             </div>
             <div class="preview-img">
-                <img src="assets/img/image-placeholder.svg" alt="preview-img">
+                <img src="src/assets/img/image-placeholder.svg" alt="preview-img">
             </div>
         </div>
         <div class="controls">
             <button class="reset-filters">Limpar Filtros</button>
             <div class="row">
+                <input type="file" class="file-input" accept="image/*" hidden>
                 <button class="choose-img">Escolha a Imagem</button>
                 <button class="save-img">Salvar Imagem</button>
             </div>
         </div>
     </div>
+
+
+    <script src="js/main.js"></script>
 </body>
 </html>
