@@ -1,9 +1,11 @@
 const fileInput = document.querySelector(".file-input");
+const previewImg = document.querySelector(".preview-img img");
 const chooseImgBtn = document.querySelector(".choose-img");
 
-const loadImage = () => {
-    let file = fileInput.files[0] // gettinf user selected file
-    console.log(file)
+const loadImage = (e) => {
+    let file = fileInput.files[0] // getting user selected file
+    if(!file) return; // para não retornar undefined em caso de não selecionar uma img  
+    previewImg.src = URL.createObjectURL(file) 
 }
 
 fileInput.addEventListener("change", loadImage);
