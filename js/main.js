@@ -5,6 +5,13 @@ const chooseImgBtn = document.querySelector(".choose-img");
 const filterOptions = document.querySelectorAll(".filter button");
 const filterName = document.querySelector(".filter-info .name");
 const filterSlider = document.querySelector(".slider input");
+const filterValue = document.querySelector(".filter-info .value");
+
+let brightness = 100,
+saturation = 100,
+inversion = 0,
+grayscale = 0;
+
 
 const loadImage = () => {
     let file = fileInput.files[0] // getting user selected file
@@ -21,11 +28,36 @@ filterOptions.forEach(option => {
         document.querySelector(".filter .active").classList.remove("active");
         option.classList.add("active");
         filterName.innerText = option.innerText;
+
+        if(option.id === "brightness"){ // persist the state of the filters in the slider range
+            filterSlider.value =   brightness
+            filterValue.innerText = `${brightness}%`
+        } else if(option.id === "saturation") {
+            filterSlider.value =   saturation
+            filterValue.innerText = `${saturation}%`
+        } else if(option.id === "inversion"){
+            filterSlider.value =  inversion
+            filterValue.innerText = `${inversion}%`
+        } else {
+            filterSlider.value =  grayscale
+            filterValue.innerText = `${grayscale}%`
+        }
     });
 });
 
 const updateFilter = () => {
-    console.log(filterSlider.value)
+    filterValue.innerText = `${filterSlider.value}%`;
+    const selectedFilter = document.querySelector(".filter .active"); // getting selected filter btn
+
+    if(selectedFilter.id === "brightness"){
+        brightness = filterSlider.value;
+    } else if(selectedFilter.id === "saturation"){
+        saturation = filterSlider.value;
+    } else if(selectedFilter.id === "inversion") {
+        inversion = filterSlider.value;
+    } else {
+        grayscale = filterSlider.value;
+    }
 };
 
 fileInput.addEventListener("change", loadImage);
